@@ -1,4 +1,4 @@
-package com.example.carpioerikaact1.ui.gallery;
+package com.example.carpioerikaact1.ui.VisionMission;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

@@ -1,4 +1,4 @@
-package com.example.carpioerikaact1.ui.gallery;
+package com.example.carpioerikaact1.ui.VisionMission;
 
 public class VMTile
 {

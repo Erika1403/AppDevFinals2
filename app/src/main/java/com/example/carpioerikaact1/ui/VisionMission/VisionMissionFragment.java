@@ -1,4 +1,4 @@
-package com.example.carpioerikaact1.ui.gallery;
+package com.example.carpioerikaact1.ui.VisionMission;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -12,9 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -22,20 +20,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.carpioerikaact1.R;
-import com.example.carpioerikaact1.databinding.FragmentHomeBinding;
-import com.example.carpioerikaact1.databinding.FragmentGalleryBinding;
-import com.example.carpioerikaact1.ui.home.HomeViewModel;
+import com.example.carpioerikaact1.databinding.FragmentVisionmissionBinding;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 import yuku.ambilwarna.AmbilWarnaDialog;
 
-public class GalleryFragment extends Fragment {
+public class VisionMissionFragment extends Fragment {
 
-    private FragmentGalleryBinding binding;
+    private FragmentVisionmissionBinding binding;
     SharedPreferences sharedPreferences;
     ConstraintLayout clayout;
     Button changeBG;
@@ -47,10 +40,10 @@ public class GalleryFragment extends Fragment {
     ArrayList<VMTile> data;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        GalleryViewModel visionMissionViewModel =
-                new ViewModelProvider(this).get(GalleryViewModel.class);
+        VMViewModel visionMissionViewModel =
+                new ViewModelProvider(this).get(VMViewModel.class);
 
-        binding = FragmentGalleryBinding.inflate(inflater, container, false);
+        binding = FragmentVisionmissionBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         data = populateData();
         //final TextView textView = binding.txtName;

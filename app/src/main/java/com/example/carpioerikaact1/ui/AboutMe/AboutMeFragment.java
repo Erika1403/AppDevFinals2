@@ -1,4 +1,4 @@
-package com.example.carpioerikaact1.ui.slideshow;
+package com.example.carpioerikaact1.ui.AboutMe;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,18 +10,18 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.carpioerikaact1.databinding.FragmentSlideshowBinding;
+import com.example.carpioerikaact1.databinding.FragmentAboutmeBinding;
 
-public class SlideshowFragment extends Fragment {
+public class AboutMeFragment extends Fragment {
 
-    private FragmentSlideshowBinding binding;
+    private FragmentAboutmeBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        SlideshowViewModel slideshowViewModel =
-                new ViewModelProvider(this).get(SlideshowViewModel.class);
+        AboutMeViewModel slideshowViewModel =
+                new ViewModelProvider(this).get(AboutMeViewModel.class);
 
-        binding = FragmentSlideshowBinding.inflate(inflater, container, false);
+        binding = FragmentAboutmeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView textView = binding.textSlideshow;
