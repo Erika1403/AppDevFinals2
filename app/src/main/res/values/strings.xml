@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">The Nocturnal\'s Library</string>
+    <string name="username">Username</string>
+    <string name="pass">Block and Year</string>
+    <string name="forgotP">Forgot Password?</string>
+    <string name="btnLog">Log In</string>
+    <string name="AccountQ">Don\'t have an account?</string>
+    <string name="lblSign">Sign Up!</string>
+    <string name="gameDirection">Guess the number from 0 - 100!</string>
+    <string name="ghint">Your Guess</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_nav">ActivityNav</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Erika B. Carpio</string>
+    <string name="nav_header_subtitle">BSCS - DS 3A</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+</resources>
