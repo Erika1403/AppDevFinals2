@@ -1,13 +1,25 @@
 <resources>
-    <string name="app_name">The Nocturnal\'s Library</string>
+    <string name="app_name">Carpio\'s Final Project</string>
     <string name="username">Username</string>
     <string name="pass">Block and Year</string>
     <string name="forgotP">Forgot Password?</string>
     <string name="btnLog">Log In</string>
     <string name="AccountQ">Don\'t have an account?</string>
     <string name="lblSign">Sign Up!</string>
-    <string name="gameDirection">Guess the number from 0 - 100!</string>
+    <string name="gameDirection">Guess the number from 0 – 100!</string>
+    <string name="start">Start Guessing!!</string>
+    <string name="giveUp">The answer is…</string>
     <string name="ghint">Your Guess</string>
+    <string name="guess">Guess</string>
+    <string name="guesses">Your Guesses:</string>
+    <string name="qDesc">Question mark image</string>
+    <string name="lDesc">Robot Question mark image</string>
+    <string name="myname">Erika B. Carpio</string>
+    <string name="mysection">BSCS - DS 3A</string>
+    <string name="changeBG">Change Background</string>
+    <string name="changeTextC"> Change TextColor</string>
+    <string name="welcome">Welcome to My Project</string>
+    <string name="subtitle">This project includes the following:</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_nav">ActivityNav</string>

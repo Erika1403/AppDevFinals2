@@ -4,20 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.game.GameFragment"
-    android:background="@drawable/nocturnal">
+    tools:context=".ui.game.GameFragment">
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_width="215dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="64dp"
         android:fontFamily="@font/aclonica"
         android:text="@string/gameDirection"
+        android:textAlignment="center"
         android:textColor="@color/BlueO"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
@@ -44,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/akaya_telivigala"
-        android:text="Start Guessing!"
+        android:text="@string/start"
         android:textColor="@color/Plum"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,8 +54,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvGuesses"
-        android:layout_width="350dp"
-        android:layout_height="310dp"
+        android:layout_width="345dp"
+        android:layout_height="215dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,10 +64,10 @@
     <Button
         android:id="@+id/btnGuess"
         android:layout_width="172dp"
-        android:layout_height="49dp"
+        android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/RedO"
-        android:text="Guess"
+        android:text="@string/guess"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -80,9 +81,44 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="50dp"
         android:fontFamily="@font/aladin"
-        android:text="Your Guesses:"
+        android:text="@string/guesses"
         android:textColor="@color/Plum"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnGuess" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="111dp"
+        android:layout_height="113dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
+        android:contentDescription="@string/qDesc"
+        android:src="@drawable/_d_casual_life_question_mark_icon_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="98dp"
+        android:layout_height="93dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="23dp"
+        android:src="@drawable/neon_chatbot_assistant_answering_questions_online"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/lDesc"/>
+
+    <ImageButton
+        android:id="@+id/btnhint"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/baseline_lightbulb_24"
+        app:layout_constraintBottom_toTopOf="@+id/rvGuesses"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.565"
+        app:layout_constraintStart_toEndOf="@+id/btnGuess"
+        app:layout_constraintTop_toBottomOf="@+id/etGuess"
+        app:layout_constraintVertical_bias="0.21" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

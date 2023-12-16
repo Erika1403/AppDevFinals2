@@ -1,5 +1,6 @@
 package com.example.carpioerikaact1.ui.game;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,6 +19,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.carpioerikaact1.databinding.FragmentGameBinding;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -30,10 +33,12 @@ public class GameFragment extends Fragment {
     private RecyclerView rvGuess;
     int randnumber;
     Random random = new Random();
+    private ImageButton btnHint;
     public recyclerAdapterGame adapterGame;
     ArrayList<GuessTile> data = new ArrayList<>();
 
 
+    @SuppressLint("SetTextI18n")
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         GameViewModel gameViewModel =
@@ -45,34 +50,40 @@ public class GameFragment extends Fragment {
         btnGuess = binding.btnGuess;
         etGuess = binding.etGuess;
         hint = binding.txtHint;
+        btnHint = binding.btnhint;
         rvGuess = binding.rvGuesses;
         setAdapter();
-        btnGuess.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(btnGuess.getText().toString().equals("Guess")){
-                    int numguess = Integer.parseInt(etGuess.getText().toString());
-                    if(randnumber == numguess){
-                        hint.setText("You got it!");
-                        addHistory("Correct", numguess);
-                        btnGuess.setText("Try Again");
-                    }
-                    else if(numguess > randnumber){
-                        hint.setText("Try Lower");
-                        addHistory("Higher", numguess);
-                    }
-                    else if(numguess < randnumber){
-                        hint.setText("Try Higher");
-                        addHistory("Lower", numguess);
-                    }
-                    etGuess.setText("");
+        btnHint.setOnClickListener(v -> {
+            String g = Integer.toString(randnumber);
+            etGuess.setText(g);
+            hint.setText("The answer is ...");
+            btnGuess.setText("Try Again!");
+        });
+        btnGuess.setOnClickListener(v -> {
+            if(btnGuess.getText().toString().equals("Guess")){
+                int numguess = Integer.parseInt(etGuess.getText().toString());
+                if(randnumber == numguess){
+                    hint.setText("You got it!");
+                    addHistory("Correct", numguess);
+                    btnGuess.setText("Try Again");
+
                 }
-                else{
-                    randnumber = createNumber();
-                    etGuess.setText("");
-                    hint.setText("Start Guessing!");
-                    btnGuess.setText("Guess");
+                else if(numguess > randnumber){
+                    hint.setText("Try Lower");
+                    addHistory("Higher", numguess);
                 }
+                else if(numguess < randnumber){
+                    hint.setText("Try Higher");
+                    addHistory("Lower", numguess);
+                }
+                etGuess.setText("");
+            }
+            else{
+                adapterGame.clear();
+                randnumber = createNumber();
+                etGuess.setText("");
+                hint.setText("Start Guessing!");
+                btnGuess.setText("Guess");
             }
         });
         Log.d("GameFragment", "onCreateView called");
@@ -91,8 +102,7 @@ public class GameFragment extends Fragment {
     }
     private int createNumber(){
         // Generate a random integer
-        int randomNumber = random.nextInt(101);
-        return randomNumber;
+        return random.nextInt(101);
     }
     @Override
     public void onDestroyView() {

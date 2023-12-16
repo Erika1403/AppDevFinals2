@@ -9,10 +9,6 @@
             android:icon="@drawable/baseline_home_24"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/person"
-            android:title="About Me" />
-        <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/baseline_rule_24"
             android:title="Vision and Mission" />

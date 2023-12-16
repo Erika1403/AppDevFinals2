@@ -54,10 +54,14 @@ public class recyclerAdapterGame extends RecyclerView.Adapter<recyclerAdapterGam
         }
         else {
             holder.status.setImageResource(R.drawable.baseline_check_circle_outline_24);
-            String correct = "Your Guess of " + Integer.toString(num) + " is " + c + "!";
-            holder.info.setText(correct);
+            data = "Your Guess of " + Integer.toString(num) + " is " + c + "!";
         }
         holder.info.setText(data);
+    }
+    public void clear() {
+        int size = contents.size();
+        contents.clear();
+        notifyItemRangeRemoved(0, size);
     }
     @Override
     public int getItemCount() {
